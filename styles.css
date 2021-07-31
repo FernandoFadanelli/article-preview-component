@@ -1,0 +1,270 @@
+:root {
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+}
+
+/* ##########################################
+   Body styles and centering the main-card
+############################################# */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-grayish-blue);
+}
+
+/* ##########################################
+                Font's styles
+############################################# */
+h1 {
+  color: var(--very-dark-grayish-blue);
+  font-weight: 700;
+  font-size: 1.9rem;
+  margin-top: 0;
+}
+
+h2 {
+  color: var(--very-dark-grayish-blue);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 5px 0;
+}
+
+h3 {
+  color: var(--desaturated-dark-blue);
+  font-weight: 400;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+p {
+  color: var(--desaturated-dark-blue);
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* ##########################################
+              main-card's styles
+############################################# */
+.main-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px 5px rgba(158, 175, 194, 0.4);
+  display: flex;
+  flex-direction: row;
+  height: 330px;
+  justify-content: space-between;
+  /* overflow: hidden; */
+  position: relative;
+}
+
+/* Image cell and drawer image sizes and position */
+.image-cell {
+  border-radius: inherit;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow: hidden;
+  width: 380px;
+}
+
+.drawer-image {
+  position: relative;
+  width: 420px;
+}
+
+/* Text cell styles */
+.text-cell {
+  margin: 4% 5%;
+  width: 485px;
+}
+
+/* info-share container styles and positioning */
+.info-share {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+
+.personal-info {
+  display: flex;
+  align-items: center;
+  width: 300px;
+}
+
+.profile-image {
+  border-radius: 20px;
+  width: 40px;
+}
+
+.personal-info .text {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* Normal share button styling */
+.share-icon {
+  background-color: var(--light-grayish-blue);
+  border-radius: 25px;
+  height: 15px;
+  padding: 12px;
+  transition: background 0.3s 0s ease-in;
+  width: 15px;
+  z-index: 2;
+}
+
+/* Hover share button styling */
+.share-icon:hover {
+  cursor: pointer;
+  background-color: var(--desaturated-dark-blue);
+}
+
+.share-icon:hover > path {
+  cursor: pointer;
+  fill: white;
+}
+
+/* Pressed button style */
+.pressed-share-background {
+  background-color: var(--desaturated-dark-blue);
+}
+
+.pressed-share-path {
+  fill: white;
+}
+
+/* ##########################################
+              share-card's styles
+############################################# */
+.share-card-and-triangle {
+  position: absolute;
+  top: 156px;
+  left: 660px;
+}
+
+.share-card {
+  align-items: center;
+  background-color: var(--very-dark-grayish-blue);
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px 5px rgba(158, 175, 194, 0.4);
+  display: flex;
+  justify-content: center;
+  height: 70px;
+  width: 280px;
+}
+
+.triangle-down {
+  width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-top: 20px solid var(--very-dark-grayish-blue);
+  position: relative;
+  top: -5px;
+	left: 120px;
+}
+
+.share-card h2 {
+  color: var(--grayish-blue);
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 4px;
+}
+
+.share-card-icons {
+ margin-left: 20px
+}
+
+.share-card-icons img {
+  cursor: pointer;
+  width: 20px;
+  margin-right: 10px;
+}
+
+/* Styles for smaller screens */
+@media only screen and (max-width:850px){
+  /* Fonts */
+  h1 {
+    font-size: 1.35rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 1.09rem;
+  }
+
+  /* Main card */
+  .main-card {
+    flex-direction: column;
+    height: auto;
+    width: 350px;
+  }
+
+  /* Image cell */
+  .drawer-image {
+    width: 380px;
+  }
+
+  .image-cell {
+    border-top-right-radius: inherit;
+    border-bottom-left-radius: 0;
+    width: auto;
+    height: 250px;
+  }
+
+  /* Text cell */
+  .text-cell {
+    margin: 40px 35px 15px 35px;
+    width: auto;
+    height: auto;
+  }
+
+  /* Increasing share-icon width to avoid path cropping */
+  .share-icon {
+    height: 15px;
+    width: 20px;
+  }
+
+  /* Modify the share card */
+  .triangle-down {
+    display: none;
+  }
+
+  .share-card-and-triangle {
+    box-shadow: none;
+    position: absolute;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .share-card {
+    justify-content: flex-start;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 100%;
+    height: 70px;
+  }
+
+  .share-card h2 {
+    margin-left: 25px;
+  }
+
+}
